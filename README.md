@@ -24,7 +24,7 @@ Mandrill.run(...)
 
 The `Mandill.run` method will log in the event something goes wrong, but will never return anything. (Something that will be fixed in the future at some point.)
 
-## Sending a regular email
+### Sending a regular email
 
 To send an email using the Mandrill API, you create an instance of a `MandrillMessage`, create a `SendMandrillMessage` then pass that to `Mandrill.run`.
 
@@ -40,7 +40,7 @@ Mandrill.run(SendMandrillMessage(MandrillMessage(
 )))
 ```
 
-## Sending a templated email
+### Sending a templated email
 
 To send an email with a template on your Mandrill account, you need to know the template name, and the name of the `mc:edit` regions in the email. Once you have that, you can invoke `SendTemplateMandrillMessage`.
 
