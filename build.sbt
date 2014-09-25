@@ -7,7 +7,7 @@ organization := "com.hacklanta"
 scalaVersion := "2.10.4"
 
 libraryDependencies ++= {
-  val liftVersion = "2.6-M3"
+  val liftVersion = "2.6-RC1"
   Seq(
     "net.liftweb"             %% "lift-common"        % liftVersion,
     "net.liftweb"             %% "lift-util"          % liftVersion,
