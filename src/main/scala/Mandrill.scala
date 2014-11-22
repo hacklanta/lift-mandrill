@@ -34,7 +34,9 @@ case class SendTemplateMandrillMessage(message: MandrillMessage, template_name: 
 object Mandrill extends Loggable {
   implicit val formats = DefaultFormats
 
-  private val key = Props.get("mandrill.apiKey") openOr ""
+  private val key = Box.legacyNullTest(System.getenv("MANDRILL_KEY")) or
+                    Box.legacyNullTest(System.getProperty("mandrill.apiKey")) or
+                    Props.get("mandrill.apiKey") openOr ""
   private val endpointHost = Props.get("mandrill.endpointHost") openOr "mandrillapp.com"
   private val endpointVersion = Props.get("mandrill.endpointVersion") openOr "1.0"
 
